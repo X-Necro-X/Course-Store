@@ -19,6 +19,7 @@ class Users extends Migration
             $table->string('email');
             $table->string('password');
             $table->string('type');
+            $table->rememberToken();
             $table->timestamps();
         });
     }

@@ -17,15 +17,17 @@
                 <span class="ml-3 text-xl">Course Store</span>
             </a>
             <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
-                <a href="#home" class="mr-5 hover:text-white cursor-pointer">Home</a>
-                <a href="#features" class="mr-5 hover:text-white cursor-pointer">Features</a>
+                <a href="{{ route('home') }}" class="mr-5 hover:text-white cursor-pointer">Home</a>
+                <a href="{{ route('home') }}#features" class="mr-5 hover:text-white cursor-pointer">Features</a>
                 <a href="https://github.com/X-Necro-X/Course-Store" target="_blank"
                     class="mr-5 hover:text-white cursor-pointer">Github Repo</a>
                 <a href="https://www.necro.in/" target="_blank" class="mr-5 hover:text-white cursor-pointer">About
                     Me</a>
             </nav>
-            <a href="{{ route('register') }}"
-                class="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0">SignUp
+
+            <a href="@if($type == 'signup') {{ route('login') }} @else {{ route('register') }} @endif"
+                class="inline-flex items-center bg-gray-800 border-0 py-1 px-3 focus:outline-none hover:bg-gray-700 rounded text-base mt-4 md:mt-0">@if($type == 'signup')
+                {{ 'LogIn' }} @else {{ 'SignUp' }} @endif
                 <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     class="w-4 h-4 ml-1" viewBox="0 0 24 24">
                     <path d="M5 12h14M12 5l7 7-7 7"></path>
